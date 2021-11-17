@@ -49,8 +49,8 @@ export default function MainStack() {
         })}
       >
 
-        <Tab.Screen name="Acopio" options={{title: "Centros de Acopio"}}  component={MapScreen} />
         <Tab.Screen name="Home" component={HomeMenuScreen}/>
+        <Tab.Screen name="Acopio" options={{title: "Centros de Acopio"}}  component={MapScreen} />
         <Tab.Screen name="Profile" options={{title: "Perfil"}} component={ProfileScreen} />
             
       </Tab.Navigator>
