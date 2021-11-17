@@ -4,12 +4,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeMenuScreen from './HomeMenuScreen';
 
 
+
+
 const Stack = createNativeStackNavigator();
 
 export default function HomeStack() {
     return (
         <Stack.Navigator  
-            initialRouteName="Main-Homen"
+            initialRouteName="welcome"
             screenOptions={{
                 headerShown: false,
                 headerTitleStyle: {
@@ -17,7 +19,8 @@ export default function HomeStack() {
                   }
               }}
             
-        >
+        >   
+           
             <Stack.Screen  name="Main-Home"  component={HomeMenuScreen} />
         </Stack.Navigator>
     )

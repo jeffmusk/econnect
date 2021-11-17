@@ -5,8 +5,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 
 /* screen */
-import Login from './src/screens/authScreen.js/Login';
+
 import MainStack from './src/screens/mainStack/MainStack';
+import AuthStack from './src/screens/authScreen.js/AuthStack';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -14,7 +16,7 @@ const Stack = createNativeStackNavigator();
 function App() {
 
   
-  const [isSignedIn, setIsSignedIn] = useState(true)
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [loaded] = useFonts({
     Questrial: require('./src/assets/tipografias/Questrial.ttf'),
   });
@@ -32,13 +34,13 @@ return null;
                 }}
           >
             {isSignedIn ? (
-              <>
+              <>  
                 <Stack.Screen name="MainStack" component={MainStack} />
               </>
             ) : (
               <>
-                <Stack.Screen name="Login" component={Login} />
-
+              
+                <Stack.Screen name="AuthStack" component={AuthStack} />
               </>
             )}
       </Stack.Navigator>
