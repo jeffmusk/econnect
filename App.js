@@ -1,39 +1,22 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import 'react-native-gesture-handler';
-import { View, Text,Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 /* screen */
 import HomeStack from './src/screens/homeScreen/HomeStack';
 import MapScreen from './src/screens/mapsScreen/MapScreen';
+import ProfileScreen from './src/screens/profileScreen/ProfileScreen';
 
 import Colors from './src/res/ColorsLib'
 
 /* Icon */
 import { Ionicons } from '@expo/vector-icons';
 
-
-
-
-function ProfileScreen({ navigation }){
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen</Text>
-      <Button
-        title="Ir a Maps"
-        onPress={() => navigation.navigate('Map')}
-      />
-    </View>
-  );
-}
-
-
-
-
 const Tab = createBottomTabNavigator();
 
 function App() {
+
   return (
     <NavigationContainer>
       <Tab.Navigator 
@@ -73,15 +56,14 @@ function App() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          
         })}
-
-       
-
       >
+
+        {/* Navegacion si esta logueado o no el usuario */}
         <Tab.Screen name="Acopio"  component={MapScreen} />
         <Tab.Screen name="Home" component={HomeStack}/>
         <Tab.Screen name="Profile" component={ProfileScreen} />
+
       </Tab.Navigator>
     </NavigationContainer>
   );
