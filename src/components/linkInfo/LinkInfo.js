@@ -1,34 +1,61 @@
 import React from 'react'
-import { View, Text,TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text,TouchableOpacity, StyleSheet,Image } from 'react-native'
 import Colors from '../../res/ColorsLib'
+import { NeuView } from 'react-native-neu-element';
+import { Ionicons } from '@expo/vector-icons';
 
 
-export default function LinkInfo({title}) {
+export default function LinkInfo({title,nameImage  }) {
+    let pathImage;
+
+    switch (nameImage) {
+        case 'brain':
+            pathImage = require(`../../assets/infoIcons/brain.png`)
+            break;
+        case 'craft':
+            pathImage = require(`../../assets/infoIcons/craft.png`)
+            break;    
+        case 'recicle':
+            pathImage = require(`../../assets/infoIcons/recicle.png`)
+            break; 
+        case 'tools':
+            pathImage = require(`../../assets/infoIcons/tools.png`)
+            break;    
+        case 'team':
+            pathImage = require(`../../assets/infoIcons/team.png`)
+            break;     
+        default:
+            break;
+    }
+
+   
+
+      
     return (
-        <TouchableOpacity style={styles.container}>
-           
-            <Text>Imagen</Text>
-            <Text style={styles.textLink}>{title}</Text>
-            <Text>Icon</Text>
+        <TouchableOpacity >
+            <NeuView style={{margin:5}} color='#F2F2F2' height={65} width={350} borderRadius={15} containerStyle={styles.container} customLightShadow={"#ffffff"}> 
+                <Image source={pathImage}/>
+                <Text style={[styles.textLink,{fontFamily: 'Questrial'}]}>{title}</Text>
+               
+                <Ionicons name="arrow-redo" size={20} color={Colors.green} />
+            </NeuView>
         </TouchableOpacity>
     )
 }
 
 const styles=  StyleSheet.create({
     container:{
-        width: '90%',
-        padding: 20,
         alignContent: 'center',
-        backgroundColor: "#f2f2f2",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignContent: 'center',
-        borderRadius: 15,       
-        elevation:3
+        paddingLeft:20,
+        paddingRight:10
     },
     textLink:{
-        fontSize:15,
-        color: 'white',
-        fontWeight: '700',
+        fontSize:17,
+        color: Colors.green,
+   
+     
     }
 })

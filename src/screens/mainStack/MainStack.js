@@ -14,6 +14,7 @@ export default function MainStack() {
     return (
       
       <Tab.Navigator 
+      initialRouteName={'Home'}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color }) => {
             let iconName;
@@ -44,13 +45,14 @@ export default function MainStack() {
           headerTitleAlign: 'center',
           headerStyle: { backgroundColor: Colors.green },
           headerTitleStyle: {
-            fontWeight: 'bold',
+            
+            fontFamily: 'Questrial'
           },
         })}
       >
 
-        <Tab.Screen name="Home" component={HomeMenuScreen}/>
         <Tab.Screen name="Acopio" options={{title: "Centros de Acopio"}}  component={MapScreen} />
+        <Tab.Screen name="Home" component={HomeMenuScreen}/>
         <Tab.Screen name="Profile" options={{title: "Perfil"}} component={ProfileScreen} />
             
       </Tab.Navigator>

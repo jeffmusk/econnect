@@ -1,5 +1,6 @@
 const Colors= {
     green: "#2CB978",
+    newBlack: '#484848',
     charade: "#272c35",
     zircon: "#e0e0e0",
     white: "#fff",

@@ -11,8 +11,12 @@ export default function HomeStack() {
         <Stack.Navigator  
             initialRouteName="Main-Homen"
             screenOptions={{
-                headerShown: false
+                headerShown: false,
+                headerTitleStyle: {
+                    fontFamily: 'Questrial'
+                  }
               }}
+            
         >
             <Stack.Screen  name="Main-Home"  component={HomeMenuScreen} />
         </Stack.Navigator>
