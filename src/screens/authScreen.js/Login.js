@@ -4,7 +4,9 @@ import { View, Text ,
     TouchableOpacity,
     StyleSheet, 
     Image,
-    TextInput
+    TextInput,
+    Alert,
+    ActivityIndicator
 } from 'react-native'
 import Colors from '../../res/ColorsLib';
 import LinkButton from '../../components/LinkButton'
@@ -12,11 +14,12 @@ import LinkButton from '../../components/LinkButton'
 import {getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login({navigation}) {
-
+    const [loading, setloading] = useState(false);
     const [emailInput, setEmailInput] = useState('');
     const [password, setPassword] = useState('')
 
     const handelLogin=()=>{
+        setloading(true)
         const safeEmail = emailInput.toLowerCase();
         console.log(safeEmail,password);
 
@@ -27,17 +30,26 @@ export default function Login({navigation}) {
             // Signed in
             const user = userCredential.user;
             console.log(user)
+            setloading(false)
             // ...
         })
         .catch((error) => {
+            
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage)
+            setloading(false)
+            Alert.alert(
+                `Error ${errorCode}`,
+                errorMessage
+            )
         });
 
     }
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{justifyContent:'center', alignContent: 'center',flex: 1}}>
+            {loading ? <ActivityIndicator  size="large" color={Colors.green}/> 
+            :
             <View style={styles.container}>
                 <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
                 <Image style={styles.logo} source={require('../../assets/image/econnect.png')}/>
@@ -74,7 +86,7 @@ export default function Login({navigation}) {
 
                         <   TouchableOpacity  onPress={() => {navigation.navigate('restPass')}}  >
                             <Text style={styles.resetPass} >
-                               Olvidaste tu contraseña?  
+                            Olvidaste tu contraseña?  
                             </Text>
                         </TouchableOpacity>
 
@@ -88,11 +100,13 @@ export default function Login({navigation}) {
 
                 </View>
 
-               
+            
                 
                 <Image style={styles.tree1} source={require('../../assets/image/arbol1.png')}/>
                 <Image style={styles.tree2} source={require('../../assets/image/arbol2.png')}/>
             </View>
+            }
+            
         </SafeAreaView>
     )
 }

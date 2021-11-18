@@ -4,16 +4,53 @@ import { View, Text ,
     TouchableOpacity,
     StyleSheet, 
     Image,
-    TextInput
+    TextInput,
+    Alert,
+    ActivityIndicator
 } from 'react-native'
 import Colors from '../../res/ColorsLib';
 import LinkButton from '../../components/LinkButton'
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 export default function SignUp({navigation}) {
 
-    const [emailInput, setEmailInput] = useState('')
+    const [loading, setloading] = useState(false);
+    const [emailInput, setEmailInput] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const handelSignUp = ()=>{
+        const safeEmail = emailInput.toLowerCase();
+        console.log(safeEmail,password);
+        
+        const auth = getAuth();
+        
+            setloading(true)
+       
+            createUserWithEmailAndPassword(auth, emailInput, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                setloading(false)
+                Alert.alert('¡Bienvenido!'  , `Tu cuenta fue creada exitosamente para el email ${user.email}`)
+                // ...
+            })
+            .catch((error) => {
+                setloading(false)
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                Alert.alert('Error ' + errorCode , errorMessage)
+                // ..
+            });
+        
+        
+
+    }
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{justifyContent:'center', alignContent: 'center',flex: 1}}>
+            {loading ? <ActivityIndicator  size="large" color={Colors.green}/> 
+            :
             <View style={styles.container}>
                 <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
                 <Image style={styles.logo} source={require('../../assets/image/econnect.png')}/>
@@ -34,22 +71,18 @@ export default function SignUp({navigation}) {
 
                         <TextInput 
                             placeholder="Contraseña"
-                            value={emailInput}
-                            onChangeText={setEmailInput}
+                            value={password}
+                            onChangeText={setPassword}
                             style={styles.input}   
                             />
                         
-                        <TextInput 
-                            placeholder="RepetirContraseña"
-                            value={emailInput}
-                            onChangeText={setEmailInput}
-                            style={styles.input}   
-                            />
+
 
                         <LinkButton 
-                            text="Ingresar" 
+                            text="Registrarse" 
                             navigation={navigation} 
-                            route={'SignUp'}
+                            action={'onPress'}
+                            onPress={handelSignUp}
                             width={'80%'}
                             containerStyle={{marginTop:20,elevation:5}}
                             
@@ -69,6 +102,8 @@ export default function SignUp({navigation}) {
                 <Image style={styles.tree1} source={require('../../assets/image/arbol1.png')}/>
                 <Image style={styles.tree2} source={require('../../assets/image/arbol2.png')}/>
             </View>
+             }
+            
         </SafeAreaView>
     )
 }

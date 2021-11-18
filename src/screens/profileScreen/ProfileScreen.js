@@ -8,12 +8,16 @@ export default function ProfileScreen({ navigation }){
   const handelsignOut = ()=>{
     signOut(auth).then(() => {
       Alert.alert(
-        "Vuelve pronto",
-        "Has cerrado sesión"
+        "Has cerrado sesión",
+        "Vuelve pronto!"
       )
 
     }).catch((error) => {
-      // An error happened.
+      Alert.alert(
+        "No pudimos cerrar",
+        `Vuelve a intentarlo ${error}`
+      )
+      console.log(error)
     });
   }
 

@@ -1,5 +1,7 @@
 import 'react-native-gesture-handler';
 import React, { useState,useEffect } from 'react';
+import { ActivityIndicator } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
@@ -46,7 +48,7 @@ function App() {
   });
   
 if (!loaded) {
-return null;
+return <ActivityIndicator />;
 }
 
   return(
