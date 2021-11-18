@@ -4,11 +4,11 @@ import Colors from '../res/ColorsLib'
 
 
 
-export default function BigButton({text,navigation,route, width, containerStyle,textStyle}) {
+export default function BigButton({text,navigation,route, width, containerStyle,action,onPress}) {
     return (
         <TouchableOpacity 
             style={[styles.container, {width: width},containerStyle]}
-            onPress={() => {navigation.navigate(route)}}
+            onPress={action == "route" ? () => {navigation.navigate(route)}:onPress }
             >
             <Text style={styles.textBtn}  >{text}</Text>
         </TouchableOpacity>

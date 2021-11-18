@@ -1,8 +1,10 @@
 import 'react-native-gesture-handler';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
+import firebase from './src/lib/firebase'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 /* screen */
 
@@ -15,7 +17,29 @@ const Stack = createNativeStackNavigator();
 
 function App() {
 
+
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log(uid)
+        setIsSignedIn(true)
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        console.log("no logueado");
+        setIsSignedIn(false)
+      }
+    });
+  });
+
   
+
+
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [loaded] = useFonts({
     Questrial: require('./src/assets/tipografias/Questrial.ttf'),

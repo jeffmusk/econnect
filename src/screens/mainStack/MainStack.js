@@ -10,7 +10,7 @@ import Colors from '../../res/ColorsLib';
 
 const Tab = createBottomTabNavigator();
 
-export default function MainStack() {
+export default function MainStack({setIsSignedIn}) {
     return (
       
       <Tab.Navigator 
@@ -53,7 +53,7 @@ export default function MainStack() {
 
         <Tab.Screen name="Acopio" options={{title: "Centros de Acopio"}}  component={MapScreen} />
         <Tab.Screen name="Home" component={HomeMenuScreen}/>
-        <Tab.Screen name="Profile" options={{title: "Perfil"}} component={ProfileScreen} />
+        <Tab.Screen name="Profile"  options={{title: "Perfil"}} component={ProfileScreen} />
             
       </Tab.Navigator>
 

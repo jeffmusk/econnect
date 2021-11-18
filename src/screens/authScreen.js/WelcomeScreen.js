@@ -17,7 +17,7 @@ export default function WelcomeScreen({ navigation }) {
             y orgánicos, mientras aprendes y te diviertes. {"\n"} {"\n"} Anímate a ver todas las secciones que    tenemos para ti.
             </Text>
             
-            <LinkButton text="Siguiente" navigation={navigation} route={'Login'} width={'85%'}/>
+            <LinkButton action={'route'} text="Siguiente" navigation={navigation} route={'Login'} width={'85%'}/>
         </View>
     )
 }

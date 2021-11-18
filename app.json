@@ -20,8 +20,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.xiclica.ecopruebas",
-      "googleServicesFile": "./google-services.json",
+
 
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",

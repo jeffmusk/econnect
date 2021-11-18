@@ -7,20 +7,41 @@ import { View, Text ,
     TextInput
 } from 'react-native'
 import Colors from '../../res/ColorsLib';
-
 import LinkButton from '../../components/LinkButton'
+
+import {getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login({navigation}) {
 
-    const [emailInput, setEmailInput] = useState('')
+    const [emailInput, setEmailInput] = useState('');
+    const [password, setPassword] = useState('')
+
+    const handelLogin=()=>{
+        const safeEmail = emailInput.toLowerCase();
+        console.log(safeEmail,password);
+
+        const auth = getAuth();
+
+        signInWithEmailAndPassword(auth, safeEmail, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user)
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage)
+        });
+
+    }
     return (
         <SafeAreaView>
             <View style={styles.container}>
                 <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
                 <Image style={styles.logo} source={require('../../assets/image/econnect.png')}/>
-                
-                
-                    
+                                    
                 <View style={styles.Form}>
             
                     <View>
@@ -35,23 +56,28 @@ export default function Login({navigation}) {
 
                         <TextInput 
                             placeholder="Contraseña"
-                            value={emailInput}
-                            onChangeText={setEmailInput}
+                            value={password}
+                            onChangeText={setPassword}
                             style={styles.input}   
+                            secureTextEntry={true}
                             />
 
                         <LinkButton 
                             text="Ingresar" 
                             navigation={navigation} 
-                            route={'SignUp'}
+                            action="onPress"
                             width={'80%'}
                             containerStyle={{marginTop:20,elevation:5}}
+                            onPress={handelLogin}
                             />
+
+
                         <   TouchableOpacity  onPress={() => {navigation.navigate('restPass')}}  >
                             <Text style={styles.resetPass} >
                                Olvidaste tu contraseña?  
                             </Text>
                         </TouchableOpacity>
+
                     </View>
 
                     <   TouchableOpacity  onPress={() => {navigation.navigate('SignUp')}}  >
