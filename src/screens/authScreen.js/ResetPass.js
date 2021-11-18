@@ -10,7 +10,7 @@ import Colors from '../../res/ColorsLib';
 
 import LinkButton from '../../components/LinkButton'
 
-export default function Login({navigation}) {
+export default function ResetPass({navigation}) {
 
     const [emailInput, setEmailInput] = useState('')
     return (
@@ -24,7 +24,7 @@ export default function Login({navigation}) {
                 <View style={styles.Form}>
             
                     <View>
-                        <Text style={styles.title}> Ingresar</Text>
+                        <Text style={styles.title}> Restablecer contraseña</Text>
                         
                         <TextInput 
                             placeholder="Correo electrónico"
@@ -33,32 +33,22 @@ export default function Login({navigation}) {
                             style={styles.input}                           
                             />
 
-                        <TextInput 
-                            placeholder="Contraseña"
-                            value={emailInput}
-                            onChangeText={setEmailInput}
-                            style={styles.input}   
-                            />
 
                         <LinkButton 
-                            text="Ingresar" 
+                            text="Restablecer contraseña" 
                             navigation={navigation} 
                             route={'SignUp'}
                             width={'80%'}
                             containerStyle={{marginTop:20,elevation:5}}
                             />
-                        <   TouchableOpacity  onPress={() => {navigation.navigate('restPass')}}  >
+                        <   TouchableOpacity  onPress={() => {navigation.navigate('Login')}}  >
                             <Text style={styles.resetPass} >
-                               Olvidaste tu contraseña?  
+                               Intentar Ingresar
                             </Text>
                         </TouchableOpacity>
                     </View>
 
-                    <   TouchableOpacity  onPress={() => {navigation.navigate('SignUp')}}  >
-                        <Text style={styles.createAccount} >
-                            No tienes una cuenta?  <Text style={styles.link}>Crea una cuenta</Text>
-                        </Text>
-                    </TouchableOpacity>
+             
 
                 </View>
 
@@ -103,7 +93,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.cafe,
         borderTopLeftRadius: 50,
         borderTopRightRadius: 50,
-        marginTop:160,
+        marginTop:200,
         height: '82%',
         justifyContent:'space-between'
     },
@@ -141,8 +131,5 @@ const styles = StyleSheet.create({
         marginBottom:50,
         marginTop:50
     },
-    link:{
-        color: Colors.naranja,
-        textDecorationLine: 'underline'
-    }
+
 })
