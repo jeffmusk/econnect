@@ -7,7 +7,7 @@ import LinkButton from '../../components/LinkButton';
 export default function WelcomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <Image style={styles.logo} source={require('../../assets/image/econnect.png')}/>
+            <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>
             <Image style={styles.heroImage} source={require('../../assets/image/heroImage.png')}/>
             <Text style={styles.title}>Bienvenid@</Text>
             <Text style={styles.textDescription} >

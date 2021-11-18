@@ -33,12 +33,12 @@ export default function LinkInfo({title,nameImage  }) {
       
     return (
         <TouchableOpacity >
-            {/* <NeuView style={{margin:5}} color='#F2F2F2' height={65} width={350} borderRadius={15} containerStyle={styles.container} customLightShadow={"#ffffff"}> 
+            <NeuView style={{margin:5}} color='#F2F2F2' height={65} width={350} borderRadius={15} containerStyle={styles.container} customLightShadow={"#ffffff"}> 
                 <Image source={pathImage}/>
                 <Text style={[styles.textLink,{fontFamily: 'Questrial'}]}>{title}</Text>
                
                 <Ionicons name="arrow-redo" size={20} color={Colors.green} />
-            </NeuView> */}
+            </NeuView>
         </TouchableOpacity>
     )
     /* return (

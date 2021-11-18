@@ -52,7 +52,7 @@ export default function Login({navigation}) {
             :
             <View style={styles.container}>
                 <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
-                <Image style={styles.logo} source={require('../../assets/image/econnect.png')}/>
+                <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>
                                     
                 <View style={styles.Form}>
             

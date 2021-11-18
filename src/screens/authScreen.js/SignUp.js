@@ -33,7 +33,7 @@ export default function SignUp({navigation}) {
                 // Signed in
                 const user = userCredential.user;
                 setloading(false)
-                Alert.alert('¡Bienvenido!'  , `Tu cuenta fue creada exitosamente para el email ${user.email}`)
+                Alert.alert('¡Bienvenido!'  , `La cuenta para el email ${user.email} fue creada exitosamente `)
                 // ...
             })
             .catch((error) => {
@@ -53,7 +53,7 @@ export default function SignUp({navigation}) {
             :
             <View style={styles.container}>
                 <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
-                <Image style={styles.logo} source={require('../../assets/image/econnect.png')}/>
+                <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>
                 
                 
                     

@@ -4,22 +4,46 @@ import { View, Text ,
     TouchableOpacity,
     StyleSheet, 
     Image,
-    TextInput
+    TextInput,
+    Alert
 } from 'react-native'
 import Colors from '../../res/ColorsLib';
+import LinkButton from '../../components/LinkButton';
 
-import LinkButton from '../../components/LinkButton'
+import {auth} from '../../lib/firebase';
+import {  sendPasswordResetEmail } from "firebase/auth";
 
 export default function ResetPass({navigation}) {
 
-    const [emailInput, setEmailInput] = useState('')
+    const [emailInput, setEmailInput] = useState('');
+
+
+    const resetPass = () => {
+        if (emailInput !== '') {
+            sendPasswordResetEmail(auth, emailInput)
+            .then(() => {
+                navigation.navigate('Login');
+                Alert.alert('Validando...','Si existe una cuenta con este email te enviaremos un correo para que restablezcas tu contraseña.')
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                Alert.alert('Error' + errorCode , errorMessage )
+            });
+        }else{
+            Alert.alert('Error','El campo Email no puede estar vacio')
+        }
+    }
+    
+
+
+
     return (
         <SafeAreaView>
             <View style={styles.container}>
                 <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
-                <Image style={styles.logo} source={require('../../assets/image/econnect.png')}/>
-                
-                
+                <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>       
                     
                 <View style={styles.Form}>
             
@@ -37,10 +61,13 @@ export default function ResetPass({navigation}) {
                         <LinkButton 
                             text="Restablecer contraseña" 
                             navigation={navigation} 
+                            action='onPress'
                             route={'SignUp'}
                             width={'80%'}
                             containerStyle={{marginTop:20,elevation:5}}
-                            />
+                            onPress={resetPass}
+                        />
+
                         <   TouchableOpacity  onPress={() => {navigation.navigate('Login')}}  >
                             <Text style={styles.resetPass} >
                                Intentar Ingresar

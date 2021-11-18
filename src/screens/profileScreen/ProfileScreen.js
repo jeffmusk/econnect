@@ -1,10 +1,25 @@
 import React from 'react'
 import { View, Text,Button,Alert,NativeModules } from 'react-native'
-import { getAuth, signOut } from "firebase/auth";
+import {  signOut } from "firebase/auth";
+import {auth} from '../../lib/firebase';
+
 
 export default function ProfileScreen({ navigation }){
 
-  const auth = getAuth();
+ 
+
+  const user = auth.currentUser;
+
+if (user) {
+  // User is signed in, see docs for a list of available properties
+  // https://firebase.google.com/docs/reference/js/firebase.User
+  // ...
+  console.log('Usario actual');
+  console.log(user.email)
+} else {
+  console.log("No se pudo obtener el usuario")
+}
+
   const handelsignOut = ()=>{
     signOut(auth).then(() => {
       Alert.alert(

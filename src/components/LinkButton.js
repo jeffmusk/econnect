@@ -10,6 +10,7 @@ export default function BigButton({text,navigation,route, width, containerStyle,
             style={[styles.container, {width: width},containerStyle]}
             onPress={action == "route" ? () => {navigation.navigate(route)}:onPress }
             >
+                
             <Text style={styles.textBtn}  >{text}</Text>
         </TouchableOpacity>
     )
