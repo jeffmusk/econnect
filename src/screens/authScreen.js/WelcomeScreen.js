@@ -1,6 +1,8 @@
 import React from 'react'
-import { View, Text,StyleSheet,TouchableOpacity , Image} from 'react-native'
+import { View, Text,StyleSheet, Image} from 'react-native'
 import Colors from '../../res/ColorsLib'
+
+import LinkButtonGreen from '../../components/LinkButtonGreen';
 
 export default function WelcomeScreen({ navigation }) {
     return (
@@ -11,12 +13,8 @@ export default function WelcomeScreen({ navigation }) {
             <Text style={styles.textDescription} >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dignissimos doloremque ipsum delectus sit ratione laudantium amet doloribus minus excepturi!
             </Text>
-            <TouchableOpacity 
-                style={styles.btn}
-                onPress={() => {navigation.navigate('Login')}}
-                >
-                <Text style={styles.textBtn} >Siguiente</Text>
-            </TouchableOpacity>
+            
+            <LinkButtonGreen text="Siguiente" navigation={navigation} route={'Login'}/>
         </View>
     )
 }
@@ -49,19 +47,6 @@ const styles = StyleSheet.create({
         paddingBottom:20,
         width: '85%'
     },
-    btn:{
-        backgroundColor: Colors.green,
-        padding: 15,
-        borderRadius:50,
-        width: '95%',
-        alignSelf:'center',
-        marginTop: 20
-    },
-    textBtn:{
-        textAlign:'center',
-        fontSize: 15,
-        color: Colors.white,
-        fontWeight: 'bold'
-        
-    }
+
+    
 })
