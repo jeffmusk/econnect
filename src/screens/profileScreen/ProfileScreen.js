@@ -1,24 +1,26 @@
-import React from 'react'
-import { View, Text,Button,Alert,NativeModules } from 'react-native'
+import React,{useState,useEffect} from 'react'
+import { View, Text,TouchableOpacity ,Alert,Image,StyleSheet } from 'react-native'
 import {  signOut } from "firebase/auth";
 import {auth} from '../../lib/firebase';
+import  Colors  from '../../res/ColorsLib';
 
 
 export default function ProfileScreen({ navigation }){
+  const [currenUser, setCurrenUser] = useState(null)
 
- 
+  useEffect(() => {
+   
+      const user = auth.currentUser;
+      if (user) {
 
-  const user = auth.currentUser;
+        setCurrenUser(user)
+      } else {
+        console.log("No se pudo obtener el usuario")
+      }
 
-if (user) {
-  // User is signed in, see docs for a list of available properties
-  // https://firebase.google.com/docs/reference/js/firebase.User
-  // ...
-  console.log('Usario actual');
-  console.log(user.email)
-} else {
-  console.log("No se pudo obtener el usuario")
-}
+  }, [currenUser])
+
+
 
   const handelsignOut = ()=>{
     signOut(auth).then(() => {
@@ -26,7 +28,6 @@ if (user) {
         "Has cerrado sesión",
         "Vuelve pronto!"
       )
-
     }).catch((error) => {
       Alert.alert(
         "No pudimos cerrar",
@@ -37,13 +38,67 @@ if (user) {
   }
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Profile Screen</Text>
-        <Button
-          title="Cerrar Sesión"
-          onPress={handelsignOut}
-        />
+      <View style={styles.container}>
+        <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>  
+        <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>
+        <Image style={styles.avatar} source={require('../../assets/image/avatar.png')}/>
+        
+        <View>
+          <Text style={styles.email}>
+            {currenUser != null ? currenUser.email : ''}
+          </Text>
+        </View>
+        
+        <TouchableOpacity 
+          onPress={handelsignOut}          
+          style={styles.btn}
+        >
+          <Text style={styles.textBtn}>Cerrar Sesión</Text>
+        </TouchableOpacity> 
       </View>
     );
   }
   
+  const styles = StyleSheet.create({
+    container:{
+      flex: 1, 
+      alignItems: 'center' 
+    },
+    logo:{
+        position: 'absolute',
+        alignSelf:'center',
+        top: 70,
+    },
+    paper:{
+        width: '100%',
+    },
+    avatar:{
+      borderRadius: 100,
+      marginTop:-60,
+      borderColor: 'white',
+      borderWidth:  6, 
+      borderStyle:  'dashed',
+    },
+    email:{
+      fontFamily: 'Questrial',
+      fontSize:20,
+      marginTop: 20,
+      marginBottom:20
+    },
+    btn:{
+      borderRadius: 50,
+      width:'85%',
+      alignSelf: 'center',
+      backgroundColor: Colors.naranja,
+      padding: 10,
+      marginTop: 50,
+      elevation: 2
+    },
+    textBtn:{
+      color: Colors.white,
+      fontFamily: 'Questrial',
+      textAlign: 'center',
+      fontSize:15
+    }
+
+})
