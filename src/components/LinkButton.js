@@ -30,6 +30,6 @@ const styles= StyleSheet.create( {
         textAlign:'center',
         fontSize: 15,
         color: Colors.white,
-        fontWeight: 'bold'
+        fontFamily: 'Questrial'
     }
 })

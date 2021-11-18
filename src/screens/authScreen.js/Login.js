@@ -27,7 +27,7 @@ export default function Login({navigation}) {
                         <Text style={styles.title}> Ingresar</Text>
                         
                         <TextInput 
-                            placeholder="Correo electronico"
+                            placeholder="Correo electrónico"
                             value={emailInput}
                             onChangeText={setEmailInput}
                             style={styles.input}                           
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 50,
         borderTopRightRadius: 50,
         marginTop:160,
-        height: '80%',
+        height: '82%',
         justifyContent:'space-between'
     },
     title:{
