@@ -1,12 +1,11 @@
 const Colors= {
     green: "#2CB978",
     newBlack: '#484848',
-    charade: "#272c35",
-    zircon: "#e0e0e0",
-    white: "#fff",
-    carmine: "#ef6372",
-    picton: "#3c6fc8",
-    gray: "gray"
+    white: "#ffffff",
+    cafe: "#432E20",
+    piel: "#E9E6E0",
+    newGreen: "439E46",
+    naranja: "#E6784B"
 }
 
 export default Colors;

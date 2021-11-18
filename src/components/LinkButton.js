@@ -4,13 +4,13 @@ import Colors from '../res/ColorsLib'
 
 
 
-export default function BigButton({text,navigation,route}) {
+export default function BigButton({text,navigation,route, width, containerStyle,textStyle}) {
     return (
         <TouchableOpacity 
-            style={styles.container}
+            style={[styles.container, {width: width},containerStyle]}
             onPress={() => {navigation.navigate(route)}}
             >
-            <Text style={styles.textBtn} >{text}</Text>
+            <Text style={styles.textBtn}  >{text}</Text>
         </TouchableOpacity>
     )
 }
@@ -20,11 +20,11 @@ export default function BigButton({text,navigation,route}) {
 
 const styles= StyleSheet.create( {
     container:{
-        backgroundColor: Colors.green,
         padding: 15,
         borderRadius:50,
         width: '90%',
         alignSelf:'center',
+        backgroundColor: Colors.green,
     },
     textBtn:{
         textAlign:'center',

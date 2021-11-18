@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text,StyleSheet, Image} from 'react-native'
 import Colors from '../../res/ColorsLib'
 
-import LinkButtonGreen from '../../components/LinkButtonGreen';
+import LinkButton from '../../components/LinkButton';
 
 export default function WelcomeScreen({ navigation }) {
     return (
@@ -11,10 +11,13 @@ export default function WelcomeScreen({ navigation }) {
             <Image style={styles.heroImage} source={require('../../assets/image/heroImage.png')}/>
             <Text style={styles.title}>Bienvenid@</Text>
             <Text style={styles.textDescription} >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dignissimos doloremque ipsum delectus sit ratione laudantium amet doloribus minus excepturi!
+            Hola! somos el equipo de econnect y estamos felices de que estés aquí. En nuestro
+            aplicativo móvil encontraras información, tutoriales y datos acerca
+            del medio ambiente y el correcto proceso de la distribución de los residuos reciclables
+            y orgánicos, mientras aprendes y te diviertes. {"\n"} {"\n"} Anímate a ver todas las secciones que    tenemos para ti.
             </Text>
             
-            <LinkButtonGreen text="Siguiente" navigation={navigation} route={'Login'}/>
+            <LinkButton text="Siguiente" navigation={navigation} route={'Login'} width={'85%'}/>
         </View>
     )
 }
@@ -43,9 +46,10 @@ const styles = StyleSheet.create({
     textDescription:{
         alignSelf:'center',
         fontFamily: 'Questrial',
-        paddingTop:20,
-        paddingBottom:20,
+        paddingTop:10,
+        paddingBottom:15,
         width: '85%'
+
     },
 
     
