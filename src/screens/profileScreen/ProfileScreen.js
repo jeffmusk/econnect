@@ -5,7 +5,7 @@ import {auth} from '../../lib/firebase';
 import  Colors  from '../../res/ColorsLib';
 
 
-export default function ProfileScreen({ navigation }){
+export default function ProfileScreen(){
   const [currenUser, setCurrenUser] = useState(null)
 
   useEffect(() => {
@@ -75,9 +75,8 @@ export default function ProfileScreen({ navigation }){
     avatar:{
       borderRadius: 100,
       marginTop:-60,
-      borderColor: 'white',
-      borderWidth:  6, 
-      borderStyle:  'dashed',
+      borderColor: Colors.green,
+      borderWidth:  6
     },
     email:{
       fontFamily: 'Questrial',

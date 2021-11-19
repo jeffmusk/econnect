@@ -5,7 +5,7 @@ import { NeuView } from 'react-native-neu-element';
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function LinkInfo({title,nameImage  }) {
+export default function LinkInfo({title, nameImage,  route,navigation }) {
     let pathImage;
 
     switch (nameImage) {
@@ -32,11 +32,10 @@ export default function LinkInfo({title,nameImage  }) {
 
       
     return (
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.navigate(route)} >
             <NeuView style={{margin:5}} color='#F2F2F2' height={65} width={350} borderRadius={15} containerStyle={styles.container} customLightShadow={"#ffffff"}> 
                 <Image source={pathImage}/>
                 <Text style={[styles.textLink,{fontFamily: 'Questrial'}]}>{title}</Text>
-               
                 <Ionicons name="arrow-redo" size={20} color={Colors.green} />
             </NeuView>
         </TouchableOpacity>

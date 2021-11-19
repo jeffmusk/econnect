@@ -5,6 +5,7 @@ import MapScreen from '../mapsScreen/MapScreen';
 import HomeMenuScreen from '../homeScreen/HomeMenuScreen';
 import ProfileScreen from '../profileScreen/ProfileScreen';
 import Colors from '../../res/ColorsLib';
+import HomeStack from '../homeScreen/HomeStack';
 
 
 
@@ -52,7 +53,7 @@ export default function MainStack({setIsSignedIn}) {
       >
 
         <Tab.Screen name="Acopio" options={{title: "Centros de Acopio"}}  component={MapScreen} />
-        <Tab.Screen name="Home" component={HomeMenuScreen}/>
+        <Tab.Screen name="Home" component={HomeStack}/>
         <Tab.Screen name="Profile"  options={{title: "Perfil"}} component={ProfileScreen} />
             
       </Tab.Navigator>
