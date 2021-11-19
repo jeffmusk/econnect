@@ -14,9 +14,13 @@ import EcoEquipo from '../categoriesScreens/EcoEquipo';
 const Stack = createNativeStackNavigator();
 
 export default function HomeStack() {
+
+   
+
+   
     return (
         <Stack.Navigator  
-            
+        initialRouteName={ "Main-Home" }
             screenOptions={{
                 headerShown: false,
                 headerTitleStyle: {
@@ -24,6 +28,7 @@ export default function HomeStack() {
                   }
               }}
         >   
+            
             <Stack.Screen  name="Main-Home"  component={HomeMenuScreen} />
             <Stack.Screen  name="Econocimiento"  component={Econocimiento} />
             <Stack.Screen  name="Bricolage"  component={Bricolage} />
