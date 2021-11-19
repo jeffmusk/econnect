@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { useState,useEffect } from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, Text,View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -12,27 +12,29 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import MainStack from './src/screens/mainStack/MainStack';
 import AuthStack from './src/screens/authScreen.js/AuthStack';
+import Colors from './src/res/ColorsLib';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
 
+  const [loading, setloading] = useState(true)
 
   useEffect(() => {
     const auth = getAuth();
+   /*  setloading(true) */
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-        console.log(uid)
         setIsSignedIn(true)
         // ...
+        setloading(false)
       } else {
-        // User is signed out
-        // ...
         console.log("no logueado");
         setIsSignedIn(false)
+        setloading(false)
       }
     });
   });
@@ -46,29 +48,39 @@ function App() {
   });
   
 if (!loaded) {
-return <ActivityIndicator />;
+return <Text>Cargando...</Text>;
 }
 
   return(
-    <NavigationContainer>
-      <Stack.Navigator  
-              initialRouteName="Login"
-              screenOptions={{
-                  headerShown: false
-                }}
-          >
-            {isSignedIn ? (
-              <>  
-                <Stack.Screen name="MainStack" component={MainStack} />
-              </>
-            ) : (
-              <>
-              
-                <Stack.Screen name="AuthStack" component={AuthStack} />
-              </>
-            )}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+     {
+       loading ?
+       <View style={{flex: 1, justifyContent: 'center',alignContent: 'center'} }>
+          <ActivityIndicator size="large" color={Colors.green} />
+       </View> 
+       :
+       <NavigationContainer>
+        <Stack.Navigator  
+                initialRouteName="Login"
+                screenOptions={{
+                    headerShown: false
+                  }}
+            >
+              {isSignedIn ? (
+                <>  
+                  <Stack.Screen name="MainStack" component={MainStack} />
+                </>
+              ) : (
+                <>
+                
+                  <Stack.Screen name="AuthStack" component={AuthStack} />
+                </>
+              )}
+        </Stack.Navigator>
+      </NavigationContainer>
+     }
+      
+    </>
   )
 
 }
