@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Text ,StyleSheet, ScrollView} from 'react-native';
+import { View, Text ,StyleSheet, ScrollView,TouchableOpacity,Image} from 'react-native';
 import Miembro from '../../components/Miembro';
 import Colors from '../../res/ColorsLib';
+import { AntDesign,FontAwesome , MaterialCommunityIcons} from '@expo/vector-icons';
 
 
 export default function EcoEquipo() {
@@ -31,7 +32,25 @@ export default function EcoEquipo() {
 
 
                 <View style={styles.redes}>
-                    <Text>Redes</Text>
+                    <Text style={styles.titleredes}>Redes</Text>
+
+                    <View style={styles.linkRedes}>
+
+                        <TouchableOpacity>
+                            <FontAwesome name="facebook-f" size={50} color={Colors.white} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <AntDesign name="instagram" size={50} color={Colors.white} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <MaterialCommunityIcons name="web" size={50} color={Colors.white} />
+                        </TouchableOpacity>
+
+                       
+                    </View>
+                    
                 </View>
             </View>
         
@@ -68,11 +87,30 @@ const styles = StyleSheet.create({
     team:{
         flexDirection: 'row',
         alignContent: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingLeft: 10,
+        paddingRight:10
     },
     redes:{
-
-    }
+        fontSize:20,
+        backgroundColor: Colors.green,
+        paddingBottom: 15
+        
+    },
+    titleredes:{
+        textAlign:'center',
+        fontFamily: 'Questrial',
+        color: Colors.white,
+        justifyContent:'space-around',
+        fontSize:20,
+        padding: 10
+    },
+    linkRedes:{
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingLeft:50,
+        paddingRight:50
+    },
     
 })
 

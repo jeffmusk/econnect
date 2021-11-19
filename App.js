@@ -13,8 +13,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import MainStack from './src/screens/mainStack/MainStack';
 import AuthStack from './src/screens/authScreen.js/AuthStack';
 
-
-
 const Stack = createNativeStackNavigator();
 
 function App() {

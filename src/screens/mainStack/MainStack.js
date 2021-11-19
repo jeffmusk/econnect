@@ -2,7 +2,6 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import MapScreen from '../mapsScreen/MapScreen';
-import HomeMenuScreen from '../homeScreen/HomeMenuScreen';
 import ProfileScreen from '../profileScreen/ProfileScreen';
 import Colors from '../../res/ColorsLib';
 import HomeStack from '../homeScreen/HomeStack';
