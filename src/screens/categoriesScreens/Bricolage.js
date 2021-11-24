@@ -1,8 +1,24 @@
-import React from 'react'
-import { View, Text ,StyleSheet, ScrollView} from 'react-native';
+import React, { useState, useCallback } from 'react'
+import { View, Text ,StyleSheet, ScrollView,Alert} from 'react-native';
 import Colors from '../../res/ColorsLib';
+import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function Bricolage() {
+
+  const [playing, setPlaying] = useState(false);
+
+  const onStateChange = useCallback((state) => {
+    if (state === "ended") {
+      setPlaying(false);
+      Alert.alert("¡El video ha terminado de reproducirse!");
+    }
+  }, []);
+
+  const togglePlaying = useCallback(() => {
+    setPlaying((prev) => !prev);
+  }, []);
+
+
     return (
         <ScrollView style={styles.container}>
             <Text style={styles.category}>Bricolage</Text>
@@ -15,7 +31,14 @@ export default function Bricolage() {
             amigos y familiares.
             </Text>
 
-            <View style={styles.video}></View>
+            <View style={styles.video}>
+                <YoutubePlayer
+                    height={250}
+                    play={playing}
+                    videoId={"RdUPMjuvtsQ"}
+                    onChangeState={onStateChange}
+                />
+            </View>
 
             <Text style={styles.title}>Juego de hokey</Text>
             
@@ -23,9 +46,19 @@ export default function Bricolage() {
             Con este tutorial aprenderás a realizar este
             lindo cuadrocon tapas de gaseosa y cartón 
             reciclado para decorar espacios de nuestro hogar.
-            </Text>
 
-            <View style={styles.video}></View>
+            </Text>
+            <View style={styles.video}>
+                <YoutubePlayer
+                    height={250}
+                    play={playing}
+                    videoId={"RdUPMjuvtsQ"}
+                    onChangeState={onStateChange}
+                />
+            </View>
+
+
+            
         </ScrollView>
     )
 }
@@ -64,7 +97,7 @@ const styles = StyleSheet.create({
     },
     video:{
         backgroundColor: Colors.newBlack,
-        height: 250,
+        height: 220,
         margin: 15
     }
 })

@@ -1,8 +1,24 @@
-import React from 'react'
+import React , { useState, useCallback }  from 'react'
 import { View, Text ,StyleSheet, ScrollView} from 'react-native';
 import Colors from '../../res/ColorsLib';
+import YoutubePlayer from "react-native-youtube-iframe";
+
 
 export default function Compostaje() {
+
+  const [playing, setPlaying] = useState(false);
+
+  const onStateChange = useCallback((state) => {
+    if (state === "ended") {
+      setPlaying(false);
+      Alert.alert("¡El video ha terminado de reproducirse!");
+    }
+  }, []);
+
+  const togglePlaying = useCallback(() => {
+    setPlaying((prev) => !prev);
+  }, []);
+
     return (
         <ScrollView style={styles.container}>
             <Text style={styles.category}>Compostaje</Text>
@@ -16,7 +32,14 @@ export default function Compostaje() {
             sobre los residuos que produces en tu casa.
             </Text>
 
-            <View style={styles.video}></View>
+            <View style={styles.video}>
+                <YoutubePlayer
+                    height={250}
+                    play={playing}
+                    videoId={"vqT-k5Y5qQA"}
+                    onChangeState={onStateChange}
+                />
+            </View>
 
             <Text style={styles.title}>¿Cómo se hace el compostaje? :</Text>
             
@@ -71,7 +94,7 @@ const styles = StyleSheet.create({
     },
     video:{
         backgroundColor: Colors.newBlack,
-        height: 230,
+        height: 220,
         margin: 15
     }
 })

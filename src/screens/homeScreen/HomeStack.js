@@ -9,7 +9,7 @@ import Compostaje from '../categoriesScreens/Compostaje';
 import Ecokids from '../categoriesScreens/Ecokids';
 import EcoEquipo from '../categoriesScreens/EcoEquipo';
 
-
+import Juego from '../categoriesScreens/Juego'
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +35,7 @@ export default function HomeStack() {
             <Stack.Screen  name="Compostaje"  component={Compostaje} />
             <Stack.Screen  name="Ecokids"  component={Ecokids} />
             <Stack.Screen  name="EcoEquipo"  component={EcoEquipo} />
+            <Stack.Screen  name="Juego"  component={Juego} />
         </Stack.Navigator>
     )
 }

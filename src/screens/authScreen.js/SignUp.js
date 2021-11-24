@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     logo:{
         position: 'absolute',
         alignSelf:'center',
-        top: 70,
+        top: 50,
     },
     paper:{
         width: '100%',

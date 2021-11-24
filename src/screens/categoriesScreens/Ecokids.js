@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Text ,StyleSheet, ScrollView} from 'react-native';
 import Colors from '../../res/ColorsLib';
+import LinkButton from '../../components/LinkButton'
 
-export default function Ecokids() {
+export default function Ecokids({navigation}) {
     return (
         <ScrollView style={styles.container}>
             <Text style={styles.category}>Eco Kids</Text>
@@ -17,6 +18,7 @@ export default function Ecokids() {
             </Text>
 
             <View style={styles.video}></View>
+            <LinkButton text="Jugar" navigation={navigation} action="route" route="Juego" width="90%" />
 
             <Text style={styles.title}>Mezcla de Colores </Text>
             
@@ -28,7 +30,9 @@ export default function Ecokids() {
             nuestros niños
             </Text>
 
+
             <View style={styles.video}></View>
+          
         </ScrollView>
     )
 }
@@ -64,6 +68,7 @@ const styles = StyleSheet.create({
         paddingLeft: 25,
         paddingRight: 25,
         marginTop: 15,
+        marginBottom: 10,
         fontSize: 15
     },
     video:{
