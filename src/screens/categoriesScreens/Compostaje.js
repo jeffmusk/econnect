@@ -2,6 +2,7 @@ import React , { useState, useCallback }  from 'react'
 import { View, Text ,StyleSheet, ScrollView} from 'react-native';
 import Colors from '../../res/ColorsLib';
 import YoutubePlayer from "react-native-youtube-iframe";
+import FontsVariables from '../../res/FontVariables';
 
 
 export default function Compostaje() {
@@ -68,29 +69,30 @@ const styles = StyleSheet.create({
     },
     category:{
         textAlign:'center',
-        fontSize:22,
-        color: Colors.cafe,
-        fontWeight: 'bold',
+        fontFamily: FontsVariables.titulos,
+        fontSize: FontsVariables.sizeTextTitleCategory ,
+        backgroundColor: Colors.BgCompostaje,
+        color: Colors.white,
         marginTop:0,
         marginBottom: 15,
-        backgroundColor: Colors.white,
         elevation:5,
         padding:5
     },
     title:{
         paddingLeft: 25,
         color: Colors.green,
-        fontSize: 18,
-        fontWeight:'bold'
+        fontFamily: FontsVariables.subTitulos,
+        fontSize:FontsVariables.sizeTextSubtitulos
         
     },
     description:{
-        fontFamily: 'Questrial',
+        fontFamily: FontsVariables.textos,
+        fontSize:FontsVariables.sizeTextDescription,
         color: Colors.cafe,   
         paddingLeft: 25,
         paddingRight: 25,
-        marginTop: 15,
-        fontSize: 15
+        marginTop: 15
+     
     },
     video:{
         backgroundColor: Colors.newBlack,

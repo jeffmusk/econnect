@@ -9,7 +9,10 @@ import Compostaje from '../categoriesScreens/Compostaje';
 import Ecokids from '../categoriesScreens/Ecokids';
 import EcoEquipo from '../categoriesScreens/EcoEquipo';
 
-import Juego from '../categoriesScreens/Juego'
+import Juego from '../categoriesScreens/Juego';
+import MapScreen from '../mapsScreen/MapScreen';
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +27,8 @@ export default function HomeStack() {
             screenOptions={{
                 headerShown: false,
                 headerTitleStyle: {
-                    fontFamily: 'Questrial'
+                    fontFamily: 'MontserratSemiBold'
+                    
                   }
               }}
         >   
@@ -35,6 +39,8 @@ export default function HomeStack() {
             <Stack.Screen  name="Compostaje"  component={Compostaje} />
             <Stack.Screen  name="Ecokids"  component={Ecokids} />
             <Stack.Screen  name="EcoEquipo"  component={EcoEquipo} />
+            <Stack.Screen  name="centrosAcopio"  component={MapScreen} />
+            
             <Stack.Screen  name="Juego"  component={Juego} />
         </Stack.Navigator>
     )

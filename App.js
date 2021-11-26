@@ -45,6 +45,9 @@ function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [loaded] = useFonts({
     Questrial: require('./src/assets/tipografias/Questrial.ttf'),
+    MontserratRegular: require('./src/assets/tipografias/Montserrat-Regular.ttf'),
+    MontserratSemiBold: require('./src/assets/tipografias/Montserrat-SemiBold.ttf'),
+    MontserratThin: require('./src/assets/tipografias/Montserrat-Thin.ttf')
   });
   
 if (!loaded) {

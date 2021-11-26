@@ -116,7 +116,6 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
     container:{
         justifyContent: 'center',
-       
     },
     logo:{
         position: 'absolute',
@@ -138,7 +137,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left:0,
         top:-25
-       
     },
     Form:{
         backgroundColor: Colors.cafe,
@@ -152,7 +150,7 @@ const styles = StyleSheet.create({
         color: Colors.white,
         alignSelf: 'center',
         fontSize: 25,
-        fontFamily: 'Questrial',
+        fontFamily: 'MontserratSemiBold',
         marginTop:100,
         marginBottom:30
     },
@@ -167,20 +165,22 @@ const styles = StyleSheet.create({
         width:'80%',
         zIndex:3,
         elevation: 3,
-        fontFamily: 'Questrial'
+        fontFamily: 'MontserratRegular'
     },
     resetPass:{
         paddingRight:50,
         marginTop:15,
         color: Colors.white,
         alignSelf: 'flex-end',
-        opacity: 0.5
+        opacity: 0.5,
+        fontFamily: 'MontserratRegular'
     },
     createAccount:{
         color: Colors.white,
         alignSelf: 'center',
         marginBottom:50,
-        marginTop:50
+        marginTop:50,
+        fontFamily: 'MontserratRegular'
     },
     link:{
         color: Colors.naranja,

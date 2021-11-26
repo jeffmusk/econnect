@@ -1,7 +1,10 @@
 import React from 'react'
 import { View, Text ,StyleSheet, ScrollView} from 'react-native';
 import Colors from '../../res/ColorsLib';
-import LinkButton from '../../components/LinkButton'
+import LinkButton from '../../components/LinkButton';
+import FontsVariables from '../../res/FontVariables';
+
+
 
 export default function Ecokids({navigation}) {
     return (
@@ -45,35 +48,37 @@ const styles = StyleSheet.create({
     },
     category:{
         textAlign:'center',
-        fontSize:22,
-        color: Colors.cafe,
-        fontWeight: 'bold',
+        color: Colors.white,
         marginTop:0,
         marginBottom: 15,
-        backgroundColor: Colors.white,
+        fontFamily: FontsVariables.titulos,
+        fontSize: FontsVariables.sizeTextTitleCategory ,
+        backgroundColor: Colors.BgEcoKids,
         elevation:5,
         padding:5
     },
     title:{
         paddingLeft: 25,
         color: Colors.green,
-        fontSize: 18,
-        fontWeight:'bold',
-        textAlign:'center'
-        
+        fontFamily: FontsVariables.subTitulos,
+        fontSize:FontsVariables.sizeTextSubtitulos,
+        marginTop:10
+  
     },
     description:{
-        fontFamily: 'Questrial',
-        color: Colors.cafe,   
+        fontFamily: FontsVariables.textos,
+        fontSize:FontsVariables.sizeTextDescription,
+        color: Colors.newBlack,   
         paddingLeft: 25,
         paddingRight: 25,
         marginTop: 15,
         marginBottom: 10,
-        fontSize: 15
     },
     video:{
         backgroundColor: Colors.newBlack,
         height: 230,
-        margin: 15
+        margin: 15,
+        marginBottom:15
     }
 })
+

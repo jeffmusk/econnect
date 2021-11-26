@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text,StyleSheet, Image,TouchableOpacity,ScrollView} from 'react-native'
 import Colors from '../../res/ColorsLib'
+import FontsVariables from '../../res/FontVariables'
 
 export default function WelcomeScreen({ handelInitialLogin }) {
 
@@ -50,13 +51,16 @@ const styles = StyleSheet.create({
         fontSize:20,
         color: Colors.green,
         alignSelf:'center',
-        fontFamily: 'Questrial',
+        fontFamily: FontsVariables.titulos ,
         marginTop: 30,
         marginBottom: 30
     },
     textDescription:{
         alignSelf:'center',
-        fontFamily: 'Questrial',
+        fontFamily: FontsVariables.textos,
+        fontSize: FontsVariables.sizeTextDescription,      
+        color: "#000000",
+        fontWeight:'600',
         paddingTop:5,
         paddingBottom:5,
         width: '85%',
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
         textAlign:'center',
         fontSize: 15,
         color: Colors.white,
-        fontFamily: 'Questrial',
+        fontFamily: FontsVariables.titulos,
     }
 
     

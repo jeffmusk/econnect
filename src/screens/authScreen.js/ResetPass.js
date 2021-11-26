@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
         color: Colors.white,
         alignSelf: 'center',
         fontSize: 25,
-        fontFamily: 'Questrial',
+        fontFamily: 'MontserratSemiBold',
         marginTop:100,
         marginBottom:30
     },
@@ -143,14 +143,15 @@ const styles = StyleSheet.create({
         width:'80%',
         zIndex:3,
         elevation: 3,
-        fontFamily: 'Questrial'
+        fontFamily: 'MontserratRegular'
     },
     resetPass:{
         paddingRight:50,
         marginTop:15,
         color: Colors.white,
         alignSelf: 'flex-end',
-        opacity: 0.5
+        opacity: 0.5,
+        fontFamily: 'MontserratRegular'
     },
     createAccount:{
         color: Colors.white,

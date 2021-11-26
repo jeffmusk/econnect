@@ -75,9 +75,6 @@ export default function SignUp({navigation}) {
                             onChangeText={setPassword}
                             style={styles.input}   
                             />
-                        
-
-
                         <LinkButton 
                             text="Registrarse" 
                             navigation={navigation} 
@@ -148,7 +145,7 @@ const styles = StyleSheet.create({
         color: Colors.white,
         alignSelf: 'center',
         fontSize: 25,
-        fontFamily: 'Questrial',
+        fontFamily: 'MontserratSemiBold',
         marginTop:100,
         marginBottom:30
     },
@@ -163,14 +160,15 @@ const styles = StyleSheet.create({
         width:'80%',
         zIndex:3,
         elevation: 3,
-        fontFamily: 'Questrial'
+        fontFamily: 'MontserratRegular'
     },
 
     createAccount:{
         color: Colors.white,
         alignSelf: 'center',
         marginBottom:50,
-        marginTop:50
+        marginTop:50,
+        fontFamily: 'MontserratRegular'
     },
     link:{
         color: Colors.naranja,

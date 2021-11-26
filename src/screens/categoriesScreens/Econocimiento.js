@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text , StyleSheet} from 'react-native'
 import Colors from '../../res/ColorsLib'
+import FontsVariables from '../../res/FontVariables'
 
 export default function Econocimiento() {
     return (
@@ -26,26 +27,29 @@ const styles = StyleSheet.create({
     },
     category:{
         textAlign:'center',
-        fontSize:22,
-        color: Colors.cafe,
-        fontWeight: 'bold',
+        fontFamily: FontsVariables.titulos,
+        fontSize: FontsVariables.sizeTextTitleCategory ,
+        color: Colors.white,
         marginTop:0,
         marginBottom: 15,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.BgEconocimiento,
         elevation:5,
-        padding:5
+        padding:5,
+        
     },
     title:{
         textAlign: 'center',
         color: Colors.green,
-        fontFamily: 'Questrial',
-        fontSize:16
+        fontFamily: FontsVariables.subTitulos,
+        fontSize:FontsVariables.sizeTextSubtitulos
     },
     description:{
-        fontFamily: 'Questrial',
+        fontFamily: FontsVariables.textos,
+        fontSize:FontsVariables.sizeTextDescription,
         color: Colors.cafe,   
         paddingLeft: 25,
         paddingRight: 25,
-        marginTop: 30
+        marginTop: 30,
+        fontSize: FontsVariables.sizeTextDescription
     }
 })

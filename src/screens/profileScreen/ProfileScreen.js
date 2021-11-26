@@ -39,7 +39,7 @@ export default function ProfileScreen(){
 
     return (
       <View style={styles.container}>
-        <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>  
+        {/* <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>   */}
         <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>
         <Image style={styles.avatar} source={require('../../assets/image/avatar.png')}/>
         
@@ -65,16 +65,16 @@ export default function ProfileScreen(){
       alignItems: 'center' 
     },
     logo:{
-        position: 'absolute',
-        alignSelf:'center',
-        top: 70,
+      marginTop:50,
+      alignSelf:'center',
+      marginBottom:50
+
     },
     paper:{
         width: '100%',
     },
     avatar:{
       borderRadius: 100,
-      marginTop:-60,
       borderColor: Colors.green,
       borderWidth:  6
     },

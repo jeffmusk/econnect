@@ -3,9 +3,10 @@ import {  Text,TouchableOpacity, StyleSheet,Image,View ,Linking} from 'react-nat
 import Colors from '../../res/ColorsLib'
 import { NeuView } from 'react-native-neu-element';
 import { FontAwesome5 } from '@expo/vector-icons';
+import FontsVariables from '../../res/FontVariables';
 
 
-export default function LinkInfo({title, nameImage,  route,navigation }) {
+export default function LinkInfo({title, nameImage,  city }) {
     let pathImage;
 
     switch (nameImage) {
@@ -26,9 +27,9 @@ export default function LinkInfo({title, nameImage,  route,navigation }) {
         <TouchableOpacity onPress={handelLink} >
             <NeuView style={{margin:5}} color='#F2F2F2' height={80} width={350} borderRadius={15} containerStyle={styles.container} > 
                 <Image source={pathImage}/>
-                <View>
-                    <Text style={[styles.textLink,{fontFamily: 'Questrial'}]}>{title}</Text>
-                    <Text>Mosquera</Text>
+                <View style={{alignItems:'flex-start',width:'50%'}}>
+                    <Text style={[styles.textLink,{fontFamily: FontsVariables.titulos}]}>{title}</Text>
+                    <Text style={[styles.textLink,{fontFamily: FontsVariables.subTitulos}]} >{city}</Text>
                 </View>
                 <FontAwesome5 name="route" size={24} color={Colors.green} />
             </NeuView>

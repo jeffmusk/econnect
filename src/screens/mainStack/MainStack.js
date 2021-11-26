@@ -1,10 +1,10 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import MapScreen from '../mapsScreen/MapScreen';
 import ProfileScreen from '../profileScreen/ProfileScreen';
 import Colors from '../../res/ColorsLib';
 import HomeStack from '../homeScreen/HomeStack';
+import EcoEquipo from '../categoriesScreens/EcoEquipo';
 
 
 
@@ -14,20 +14,21 @@ export default function MainStack({setIsSignedIn}) {
     return (
       
       <Tab.Navigator 
-      initialRouteName={'Home'}
+      initialRouteName={'Econnect'}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color }) => {
             let iconName;
 
             switch (route.name) {
-                case 'Home':
+                case 'Econnect':
                     iconName = focused  ? 'md-home-sharp'  : 'md-home-outline';
                     break;
                 case 'Profile':
                     iconName = focused  ? 'md-person-circle' : 'md-person-circle-outline';
                     break;
-                case 'Acopio':
-                    iconName = focused  ? 'compass' : 'compass-outline';
+                case 'EcoEquipo':
+                    iconName = focused  ? 'people-circle' : 'people-circle-outline';
+            
                     break;
                 default:
                     break;
@@ -43,16 +44,16 @@ export default function MainStack({setIsSignedIn}) {
           },
           headerTintColor: Colors.white,
           headerTitleAlign: 'center',
+          
           headerStyle: { backgroundColor: Colors.green },
           headerTitleStyle: {
-            
-            fontFamily: 'Questrial'
+            fontFamily: 'MontserratSemiBold'
           },
         })}
       >
 
-        <Tab.Screen name="Acopio" options={{title: "Centros de Acopio"}}  component={MapScreen} />
-        <Tab.Screen name="Home" component={HomeStack}/>
+        <Tab.Screen name="EcoEquipo" options={{title: "EcoEquipo"}}  component={EcoEquipo} />
+        <Tab.Screen name="Econnect" component={HomeStack}/>
         <Tab.Screen name="Profile"  options={{title: "Perfil"}} component={ProfileScreen} />
             
       </Tab.Navigator>

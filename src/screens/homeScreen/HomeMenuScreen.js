@@ -20,7 +20,7 @@ export default function HomeMenuScreen({navigation}) {
             <LinkInfo title={'Bricolage'} nameImage={'craft'}  route={'Bricolage'}  navigation={navigation}/>
             <LinkInfo title={'Compostaje'} nameImage={'recicle'}  route={'Compostaje'}  navigation={navigation}/>
             <LinkInfo title={'EcoKids'} nameImage={'tools'} route={'Ecokids'}   navigation={navigation}/>
-            <LinkInfo title={'EcoEquipo'} nameImage={'team'} route={'EcoEquipo'}   navigation={navigation}/>
+            <LinkInfo title={'Centros de acopio'} nameImage={'map'} route={'centrosAcopio'}   navigation={navigation}/>
       </View>
 
     }

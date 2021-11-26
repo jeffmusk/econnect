@@ -31,6 +31,6 @@ const styles= StyleSheet.create( {
         textAlign:'center',
         fontSize: 15,
         color: Colors.white,
-        fontFamily: 'Questrial'
+        fontFamily: 'MontserratSemiBold'
     }
 })
