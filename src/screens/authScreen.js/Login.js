@@ -51,8 +51,9 @@ export default function Login({navigation}) {
             {loading ? <ActivityIndicator  size="large" color={Colors.green}/> 
             :
             <View style={styles.container}>
-                <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
-                <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>
+                {/* <Image style={styles.paper} source={require('../../assets/image/Papel.png')}/>    
+                */}
+                <Image style={styles.logo} source={require('../../assets/image/logo.png')}/> 
                                     
                 <View style={styles.Form}>
             
@@ -75,7 +76,7 @@ export default function Login({navigation}) {
                             />
 
                         <LinkButton 
-                            text="Ingresar" 
+                            text="Econnectate" 
                             navigation={navigation} 
                             action="onPress"
                             width={'80%'}
@@ -101,9 +102,9 @@ export default function Login({navigation}) {
                 </View>
 
             
-                
+               {/*  
                 <Image style={styles.tree1} source={require('../../assets/image/arbol1.png')}/>
-                <Image style={styles.tree2} source={require('../../assets/image/arbol2.png')}/>
+                <Image style={styles.tree2} source={require('../../assets/image/arbol2.png')}/> */}
             </View>
             }
             

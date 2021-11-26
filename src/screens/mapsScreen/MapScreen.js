@@ -46,16 +46,7 @@ export default function MapScreen({navigation}) {
         <View>
         <LinkMaps title={'IKOPORTEX'} nameImage={'maps'}  route={'Econocimiento'} navigation={navigation} />
         </View>
-        <View style={styles.container}>
-            <OpenURLButton url={supportedURL}>CENTRO DE ACOPIO UBICACION</OpenURLButton>
-            
-        </View>
-        <View>
-            <Button title="centro de acopio" 
-            onPress={ async ()=>  { 
-                await Linking.openURL('https://www.google.com/maps/dir/4.7202041,-74.2296709/IKOPORTEX,+Villa+Lady,+Cra.+6+No.+13ª+-+25+barrio,+Mosquera,+Cundinamarca/@4.7018304,-74.2108136,13.8z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8e3f9b4d6b42edab:0xec59321be270fafa!2m2!1d-74.1740464!2d4.6948814');
-            }} />
-        </View>
+   
     </View>
     )
 }
