@@ -3,6 +3,7 @@ import { View, Text ,StyleSheet, ScrollView,TouchableOpacity,Image} from 'react-
 import Miembro from '../../components/Miembro';
 import Colors from '../../res/ColorsLib';
 import { AntDesign,FontAwesome , MaterialCommunityIcons} from '@expo/vector-icons';
+import FontsVariables from '../../res/FontVariables';
 
 
 export default function EcoEquipo() {
@@ -70,17 +71,18 @@ const styles = StyleSheet.create({
     category:{
         textAlign:'center',
         fontSize:22,
-        color: Colors.cafe,
-        fontWeight: 'bold',
+        color: Colors.white,
         marginTop:0,
-        backgroundColor: Colors.white,
+        fontFamily: FontsVariables.titulos,
+        fontSize: FontsVariables.sizeTextTitleCategory ,
+        backgroundColor: Colors.BgEcoEquipo,
         elevation:5,
         padding:5
     },
     title:{
         textAlign: 'center',
         color: Colors.green,
-        fontFamily: 'Questrial',
+        fontFamily: FontsVariables.titulos,
         fontSize:20, 
         marginTop:20
     },
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
     },
     titleredes:{
         textAlign:'center',
-        fontFamily: 'Questrial',
+        fontFamily: FontsVariables.subTitulos,
         color: Colors.white,
         justifyContent:'space-around',
         fontSize:20,

@@ -3,6 +3,8 @@ import { View, Text,TouchableOpacity ,Alert,Image,StyleSheet } from 'react-nativ
 import {  signOut } from "firebase/auth";
 import {auth} from '../../lib/firebase';
 import  Colors  from '../../res/ColorsLib';
+import FontVariables from '../../res/FontVariables'
+
 
 
 export default function ProfileScreen(){
@@ -79,7 +81,7 @@ export default function ProfileScreen(){
       borderWidth:  6
     },
     email:{
-      fontFamily: 'Questrial',
+      fontFamily: FontVariables.subTitulos,
       fontSize:20,
       marginTop: 20,
       marginBottom:20
@@ -95,7 +97,7 @@ export default function ProfileScreen(){
     },
     textBtn:{
       color: Colors.white,
-      fontFamily: 'Questrial',
+      fontFamily: FontVariables.textos,
       textAlign: 'center',
       fontSize:15
     }
