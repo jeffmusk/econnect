@@ -35,15 +35,7 @@ export default function LinkInfo({title, nameImage,  city }) {
             </NeuView>
         </TouchableOpacity>
     )
-    /* return (
-        <TouchableOpacity>
-            <View style={styles.container}>
-                <Image source={pathImage}/>
-                <Text style={[styles.textLink,{fontFamily: 'Questrial'}]}>{title}</Text>   
-                <Ionicons name="arrow-redo" size={20} color={Colors.green} />
-            </View>
-        </TouchableOpacity>
-    ) */
+    
 }
 
 const styles=  StyleSheet.create({

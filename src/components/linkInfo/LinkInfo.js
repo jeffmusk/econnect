@@ -7,7 +7,7 @@ import FontsVariables from '../../res/FontVariables';
 
 FontsVariables
 
-export default function LinkInfo({title, nameImage,  route,navigation }) {
+export default function LinkInfo({title, nameImage,  route,navigation ,colorText}) {
     let pathImage;
 
     switch (nameImage) {
@@ -40,8 +40,8 @@ export default function LinkInfo({title, nameImage,  route,navigation }) {
         <TouchableOpacity onPress={() => navigation.navigate(route)} >
             <NeuView style={{margin:5}} color='#F2F2F2' height={65} width={350} borderRadius={15} containerStyle={styles.container} > 
                 <Image source={pathImage}/>
-                <Text style={[styles.textLink,{fontFamily: FontsVariables.titulos}]}>{title}</Text>
-                <Ionicons name="arrow-redo" size={20} color={Colors.green} />
+                <Text style={[styles.textLink,{fontFamily: FontsVariables.titulos,color: colorText}]}>{title}</Text>
+                <Ionicons name="arrow-redo" size={20} color={colorText} />
             </NeuView>
         </TouchableOpacity>
     )
@@ -59,7 +59,7 @@ const styles=  StyleSheet.create({
         
     },
     textLink:{
-        fontSize:17,
-        color: Colors.green,
+        fontSize:17
+      
     }
 })

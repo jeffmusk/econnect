@@ -7,13 +7,13 @@ const Colors= {
     piel: "#E9E6E0",
     newGreen: "439E46",
     oldGreen: "#2CB978",
-    naranja: "#E6784B",
-    BgEconocimiento: "#000000",
-    BgBricolage: "#000000",
-    BgCompostaje: "#000000",
-    BgEcoKids: "#000000",
-    BgEcoEquipo:"#000000",
-    BgAcopio: '#000000'
+    naranja: "#ef7b41", 
+    BgEconocimiento: "#6dab5c",
+    BgBricolage: "#4791b2",
+    BgCompostaje: "#e78f5f",
+    BgEcoKids: "#8abd56",
+    BgEcoEquipo:"#67a856",
+    BgAcopio: '#4791b2'
 }
 
 export default Colors;

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { View, Text,StyleSheet } from 'react-native'
 import LinkInfo from '../../components/linkInfo/LinkInfo'
+import Colors from '../../res/ColorsLib';
 import WelcomeScreen from '../../screens/authScreen.js/WelcomeScreen';
 
 export default function HomeMenuScreen({navigation}) {
@@ -16,11 +17,11 @@ export default function HomeMenuScreen({navigation}) {
       <WelcomeScreen handelInitialLogin={handelInitialLogin} />
       :
       <View style={styles.container}>
-            <LinkInfo title={'Econocimiento'} nameImage={'brain'}  route={'Econocimiento'} navigation={navigation} />
-            <LinkInfo title={'Bricolage'} nameImage={'craft'}  route={'Bricolage'}  navigation={navigation}/>
-            <LinkInfo title={'Compostaje'} nameImage={'recicle'}  route={'Compostaje'}  navigation={navigation}/>
-            <LinkInfo title={'EcoKids'} nameImage={'tools'} route={'Ecokids'}   navigation={navigation}/>
-            <LinkInfo title={'Centros de acopio'} nameImage={'map'} route={'centrosAcopio'}   navigation={navigation}/>
+            <LinkInfo title={'Econocimiento'} nameImage={'brain'}  route={'Econocimiento'} navigation={navigation} colorText={Colors.BgEconocimiento} />
+            <LinkInfo title={'Bricolage'} nameImage={'craft'}  route={'Bricolage'}  navigation={navigation} colorText={Colors.BgBricolage}/>
+            <LinkInfo title={'Compostaje'} nameImage={'recicle'}  route={'Compostaje'}  navigation={navigation} colorText={Colors.BgCompostaje}/>
+            <LinkInfo title={'EcoKids'} nameImage={'tools'} route={'Ecokids'}   navigation={navigation} colorText={Colors.BgEcoKids}/>
+            <LinkInfo title={'Centros de acopio'} nameImage={'map'} route={'centrosAcopio'}   navigation={navigation} colorText={Colors.BgAcopio}/>
       </View>
 
     }
