@@ -6,7 +6,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import FontsVariables from '../../res/FontVariables';
 
 
-export default function LinkInfo({title, nameImage,  city }) {
+export default function LinkInfo({title, nameImage,  city,urlRoute }) {
     let pathImage;
 
     switch (nameImage) {
@@ -18,7 +18,8 @@ export default function LinkInfo({title, nameImage,  city }) {
     }
 
    const handelLink= async () => {
-       const url = 'https://www.google.com/maps/dir/4.7202041,-74.2296709/IKOPORTEX,+Villa+Lady,+Cra.+6+No.+13ª+-+25+barrio,+Mosquera,+Cundinamarca/@4.7018304,-74.2108136,13.8z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8e3f9b4d6b42edab:0xec59321be270fafa!2m2!1d-74.1740464!2d4.6948814'
+       const url = urlRoute;
+       console.log(urlRoute)
         await Linking.openURL(url);
    }
 
