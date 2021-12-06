@@ -1,12 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import Colors from '../res/ColorsLib'
 
-export default function Miembro({name,foto,rol}) {
+export default function Miembro({name,rol, children}) {
+  
+
     return (
         <View style={styles.container}>
-            <View style={styles.photo}>
-
+          
+            <View style={styles.photo} >
+                {children}
             </View>
             <Text style={styles.name} >{name}</Text>
             <Text style={styles.rol}>{rol}</Text>
@@ -16,20 +19,27 @@ export default function Miembro({name,foto,rol}) {
 
  const styles = StyleSheet.create({
      container:{
-        padding: 10
+        padding: 5,
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignContent: 'center',
+        maxWidth: '30%'
+    },
+    photo:{
+       display: 'flex',
+       justifyContent: 'center',
+       alignContent:'center' 
      },
-     photo:{
-        height: 120,
-        width: 120,
-        borderRadius: 100,
-        backgroundColor: Colors.newBlack
-     },
+
      name:{
         textAlign: 'center',
         color: Colors.newBlack
      },
      rol:{
         textAlign: 'center',
-        color: Colors.green
+        color: Colors.green,     
+        textAlign: 'center',
+        justifyContent:'center',
+        alignContent: 'center',
      }
  })

@@ -15,20 +15,38 @@ export default function EcoEquipo() {
                 
                 <Text style={styles.title}> Integrantes</Text>
 
+        
                 <View style={styles.team}>
-                    <Miembro name="Karen Triana" rol="Marketing"/>
-                    <Miembro name="Claudia Gómez" rol="Marketing"/>
-                    <Miembro name="Camila Chinchilla" rol="Marketing"/>
+ 
+                    <Miembro name="JHOAN TORRE" rol="GUIONISTA, MARKETING" >
+                        <Image style={styles.imageTeam} source={require('../../assets/team/johan-dibujo.png')}/>    
+                    </Miembro>
+                    <Miembro name="CAMILA CHINCHILLA" rol="PRODUCTORA AUDIOVISUAL" >
+                        <Image style={styles.imageTeam} source={require('../../assets/team/camila-dibujo.png')}/>
+                    </Miembro>
+                    <Miembro name="Karen Triana" rol="PRODUCTORA AUDIOVISUAL" >
+                        <Image style={styles.imageTeam} source={require('../../assets/team/karen-dibujo.png')}/>
+                    </Miembro>
+                   
                     
                 </View>
                 <View style={styles.team}>
-                    <Miembro name="Andrés Yemayusa" rol="Marketing"/>
-                    <Miembro name="Jhoan Torres" rol="Marketing"/>
-                    <Miembro name="Juan C Bejarano" rol="Marketing"/>
+                    <Miembro name="ADOLFO SÁNCHEZ " rol="PROGRAMACIÓN APP, WEB" >
+                        <Image style={styles.imageTeam} source={require('../../assets/team/adolfo-dibujo.png')}/>    
+                    </Miembro>
+                    <Miembro name="CAMILO BEJARANO " rol=" ILUSTRADOR" >
+                        <Image style={styles.imageTeam} source={require('../../assets/team/camilo-dibujo.png')}/>    
+                    </Miembro>
+                    <Miembro name="ANDRÉS MARTÍNEZ " rol=" DISEÑADOR GRÁFICO" >
+                        <Image style={styles.imageTeam} source={require('../../assets/team/andres-dibujo.png')}/>    
+                    </Miembro>
+                
                 </View>
                 <View style={styles.team}>
-                    <Miembro name="Adolfo Sánchez" rol="Marketing"/>
-                    
+                    <Miembro name="CLAUDIA GOMEZ " rol=" DISEÑADORA GRÁFICA, PRODUCTORA TRANSMEDIA
+" >
+                        <Image style={styles.imageTeam} source={require('../../assets/team/claudia-dibujo.png')}/>    
+                    </Miembro>
                 </View>
 
 
@@ -66,7 +84,8 @@ const styles = StyleSheet.create({
     },
     view:{
         justifyContent: 'space-between',
-        height:750,
+        paddingTop: 10,
+        justifyContent: 'space-around'
     },
     category:{
         textAlign:'center',
@@ -84,19 +103,26 @@ const styles = StyleSheet.create({
         color: Colors.green,
         fontFamily: FontsVariables.titulos,
         fontSize:20, 
-        marginTop:20
+        marginTop:10,
+        marginBottom:10
     },
     team:{
         flexDirection: 'row',
-        alignContent: 'center',
-        justifyContent: 'center',
-        paddingLeft: 10,
-        paddingRight:10
+        alignContent: 'space-around',
+        justifyContent: 'space-around',     
     },
+    imageTeam:{
+        width: 100,
+        height: 130,
+        marginBottom:20,
+        alignSelf: 'center'
+        /* borderRadius:50 */
+    },  
     redes:{
         fontSize:20,
         backgroundColor: Colors.green,
-        paddingBottom: 15
+        paddingBottom: 15,
+
         
     },
     titleredes:{
@@ -105,14 +131,15 @@ const styles = StyleSheet.create({
         color: Colors.white,
         justifyContent:'space-around',
         fontSize:20,
-        padding: 10
+        padding: 10,
+
     },
     linkRedes:{
         flexDirection: 'row',
         justifyContent: 'space-around',
-        paddingLeft:50,
-        paddingRight:50
+        paddingLeft:20
     },
+    
     
 })
 

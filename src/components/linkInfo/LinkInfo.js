@@ -11,35 +11,37 @@ export default function LinkInfo({title, nameImage,  route,navigation ,colorText
     let pathImage;
 
     switch (nameImage) {
-        case 'brain':
-            pathImage = require(`../../assets/infoIcons/brain.png`)
+        case 'Econocimiento':
+            pathImage = require(`../../assets/infoIcons/econocimientos.png`)
             break;
-        case 'craft':
-            pathImage = require(`../../assets/infoIcons/craft.png`)
+        case 'Bricolage':
+            pathImage = require(`../../assets/infoIcons/bricolage.png`)
             break;    
-        case 'recicle':
-            pathImage = require(`../../assets/infoIcons/recicle.png`)
+        case 'Compostaje':
+            pathImage = require(`../../assets/infoIcons/compostaje.png`)
             break; 
-        case 'tools':
-            pathImage = require(`../../assets/infoIcons/tools.png`)
+        case 'EcoKids':
+            pathImage = require(`../../assets/infoIcons/ecokids.png`)
             break;    
-        case 'team':
-            pathImage = require(`../../assets/infoIcons/team.png`)
+        case 'acopio':
+            pathImage = require(`../../assets/infoIcons/acopio.png`)
             break;   
-        case 'map':
-            pathImage = require(`../../assets/infoIcons/iconMap.png`)
-            break;    
+   
         default:
             break;
     }
 
-   
+    
+    
+    
+    
+    
 
       
     return (
         <TouchableOpacity onPress={() => navigation.navigate(route)} >
             <NeuView style={{margin:5}} color='#F2F2F2' height={65} width={350} borderRadius={15} containerStyle={styles.container} > 
-                <Image source={pathImage}/>
+                <Image source={pathImage} />
                 <Text style={[styles.textLink,{fontFamily: FontsVariables.titulos,color: colorText}]}>{title}</Text>
                 <Ionicons name="arrow-redo" size={20} color={colorText} />
             </NeuView>

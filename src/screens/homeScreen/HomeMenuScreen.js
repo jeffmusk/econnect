@@ -17,11 +17,11 @@ export default function HomeMenuScreen({navigation}) {
       <WelcomeScreen handelInitialLogin={handelInitialLogin} />
       :
       <View style={styles.container}>
-            <LinkInfo title={'Econocimiento'} nameImage={'brain'}  route={'Econocimiento'} navigation={navigation} colorText={Colors.BgEconocimiento} />
-            <LinkInfo title={'Bricolage'} nameImage={'craft'}  route={'Bricolage'}  navigation={navigation} colorText={Colors.BgBricolage}/>
-            <LinkInfo title={'Compostaje'} nameImage={'recicle'}  route={'Compostaje'}  navigation={navigation} colorText={Colors.BgCompostaje}/>
-            <LinkInfo title={'EcoKids'} nameImage={'tools'} route={'Ecokids'}   navigation={navigation} colorText={Colors.BgEcoKids}/>
-            <LinkInfo title={'Centros de acopio'} nameImage={'map'} route={'centrosAcopio'}   navigation={navigation} colorText={Colors.BgAcopio}/>
+            <LinkInfo title={'Econocimiento'} nameImage={'Econocimiento'}  route={'Econocimiento'} navigation={navigation} colorText={Colors.BgEconocimiento} />
+            <LinkInfo title={'Bricolage'} nameImage={'Bricolage'}  route={'Bricolage'}  navigation={navigation} colorText={Colors.BgBricolage}/>
+            <LinkInfo title={'Compostaje'} nameImage={'Compostaje'}  route={'Compostaje'}  navigation={navigation} colorText={Colors.BgCompostaje}/>
+            <LinkInfo title={'EcoKids'} nameImage={'EcoKids'} route={'Ecokids'}   navigation={navigation} colorText={Colors.BgEcoKids}/>
+            <LinkInfo title={'Centros de acopio'} nameImage={'acopio'} route={'centrosAcopio'}   navigation={navigation} colorText={Colors.BgAcopio}/>
       </View>
 
     }

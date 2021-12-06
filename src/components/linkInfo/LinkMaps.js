@@ -46,8 +46,7 @@ const styles=  StyleSheet.create({
         justifyContent: 'space-around',
         alignContent: 'center',
         paddingLeft:20,
-        paddingRight:10,
-        
+        paddingRight:10
     },
     textLink:{
         fontSize:17,

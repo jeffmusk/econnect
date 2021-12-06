@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text ,StyleSheet, ScrollView} from 'react-native';
+import { View, Text ,StyleSheet, ScrollView,Image} from 'react-native';
 import Colors from '../../res/ColorsLib';
 import LinkButton from '../../components/LinkButton';
 import FontsVariables from '../../res/FontVariables';
@@ -19,9 +19,10 @@ export default function Ecokids({navigation}) {
                 de los residuos mientras sumas puntos, te
                 ensañamos!
             </Text>
-
-            <View style={styles.video}></View>
             <LinkButton text="Jugar" navigation={navigation} action="route" route="Juego" width="90%" />
+            <View style={{display: 'flex', alignContent: 'center', justifyContent: 'center'}}>
+                <Image source={require('../../assets/image/juego.png')} style={{width:'90%',marginLeft: '5%'}}/>
+            </View>
 
             <Text style={styles.title}>Mezcla de Colores </Text>
             
@@ -55,7 +56,9 @@ const styles = StyleSheet.create({
         fontSize: FontsVariables.sizeTextTitleCategory ,
         backgroundColor: Colors.BgEcoKids,
         elevation:5,
-        padding:5
+        padding:5,
+        alignContent:'center',
+        justifyContent: 'center'
     },
     title:{
         paddingLeft: 25,

@@ -22,9 +22,7 @@ export default function MapScreen() {
                         </View>
                     )
                 })}
-            </View>
-
-  
+            </View>  
         </ScrollView>
     )
 }
