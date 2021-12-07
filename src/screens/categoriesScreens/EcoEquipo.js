@@ -9,7 +9,6 @@ import FontsVariables from '../../res/FontVariables';
 export default function EcoEquipo() {
 
     const handelLink = async (url) => {
-        console.log(url)
         await Linking.openURL(url);
     }
 
