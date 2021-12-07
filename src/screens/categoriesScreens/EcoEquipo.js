@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text ,StyleSheet, ScrollView,TouchableOpacity,Image} from 'react-native';
+import { View, Text ,StyleSheet, ScrollView,TouchableOpacity,Image, Linking} from 'react-native';
 import Miembro from '../../components/Miembro';
 import Colors from '../../res/ColorsLib';
 import { AntDesign,FontAwesome , MaterialCommunityIcons} from '@expo/vector-icons';
@@ -7,6 +7,13 @@ import FontsVariables from '../../res/FontVariables';
 
 
 export default function EcoEquipo() {
+
+    const handelLink = async (url) => {
+        console.log(url)
+        await Linking.openURL(url);
+    }
+
+
     return (
         <ScrollView style={styles.container}>
             <Text style={styles.category}>EcoEquipo</Text>
@@ -24,7 +31,7 @@ export default function EcoEquipo() {
                     <Miembro name="CAMILA CHINCHILLA" rol="PRODUCTORA AUDIOVISUAL" >
                         <Image style={styles.imageTeam} source={require('../../assets/team/camila-dibujo.png')}/>
                     </Miembro>
-                    <Miembro name="Karen Triana" rol="PRODUCTORA AUDIOVISUAL" >
+                    <Miembro name="KAREN TRIANA" rol="PRODUCTORA AUDIOVISUAL" >
                         <Image style={styles.imageTeam} source={require('../../assets/team/karen-dibujo.png')}/>
                     </Miembro>
                    
@@ -55,15 +62,15 @@ export default function EcoEquipo() {
 
                     <View style={styles.linkRedes}>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{handelLink('https://www.facebook.com/Econnect-107093651704595')}} >
                             <FontAwesome name="facebook-f" size={50} color={Colors.white} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{handelLink('https://www.instagram.com/econnectcol/')}}>
                             <AntDesign name="instagram" size={50} color={Colors.white} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{handelLink('https://adolfsan99.github.io/econnect/index.html')}}> 
                             <MaterialCommunityIcons name="web" size={50} color={Colors.white} />
                         </TouchableOpacity>
 

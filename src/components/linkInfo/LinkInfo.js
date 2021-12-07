@@ -30,13 +30,6 @@ export default function LinkInfo({title, nameImage,  route,navigation ,colorText
         default:
             break;
     }
-
-    
-    
-    
-    
-    
-
       
     return (
         <TouchableOpacity onPress={() => navigation.navigate(route)} >
@@ -47,7 +40,6 @@ export default function LinkInfo({title, nameImage,  route,navigation ,colorText
             </NeuView>
         </TouchableOpacity>
     )
-
 }
 
 const styles=  StyleSheet.create({
@@ -62,6 +54,5 @@ const styles=  StyleSheet.create({
     },
     textLink:{
         fontSize:17
-      
     }
 })
