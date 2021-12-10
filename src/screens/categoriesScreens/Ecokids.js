@@ -20,7 +20,7 @@ export default function Ecokids({navigation}) {
                 ensañamos!
             </Text>
             <LinkButton text="Jugar" navigation={navigation} action="route" route="Juego" width="90%" />
-            <View style={{display: 'flex', alignContent: 'center', justifyContent: 'center'}}>
+            <View style={{display: 'flex', alignContent: 'center', justifyContent: 'center',marginTop:10}}>
                 <Image source={require('../../assets/image/juego.png')} style={{width:'90%',marginLeft: '5%'}}/>
             </View>
 
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     video:{
-        backgroundColor: Colors.newBlack,
+       /*  backgroundColor: Colors.newBlack, */
         height: 230,
         margin: 15,
         marginBottom:15

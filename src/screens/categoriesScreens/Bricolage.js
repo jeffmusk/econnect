@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
 
     },
     video:{
-        backgroundColor: Colors.newBlack,
-        height: 220,
+        /* backgroundColor: Colors.newBlack, */
+        height: 230,
         margin: 15
     }
 })
