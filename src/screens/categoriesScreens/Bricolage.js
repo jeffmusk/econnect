@@ -22,7 +22,7 @@ export default function Bricolage() {
 
     return (
         <ScrollView style={styles.container}>
-            <Text style={styles.category}>Bricolage</Text>
+            <Text style={styles.category}>Bricolaje</Text>
             
             <Text style={styles.title}>Juego de hokey</Text>
             
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     description:{
         fontFamily: FontsVariables.textos,
         fontSize:FontsVariables.sizeTextDescription,
-        color: Colors.cafe,   
+        color: "#000",   
         paddingLeft: 25,
         paddingRight: 25,
         marginTop: 15,

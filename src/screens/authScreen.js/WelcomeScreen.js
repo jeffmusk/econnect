@@ -10,9 +10,12 @@ export default function WelcomeScreen({ handelInitialLogin }) {
     return (
         <ScrollView>
             <View style={styles.container}>
-                {/* <Image style={styles.logo} source={require('../../assets/image/logo.png')}/>
-                <Image style={styles.heroImage} source={require('../../assets/image/heroImage.png')}/> */}
+                {/* 
+                
+                <Image style={styles.heroImage} source={require('../../assets/image/heroImage.png')}/> 
+            */}
                 <Text style={styles.title}>Bienvenid@ a la familia Econnect</Text>
+                <Image style={styles.personaje} source={require('../../assets/image/personaje.png')}/>
                 <Text style={styles.textDescription} >
                 Hola! somos el equipo de econnect y estamos felices de que estés aquí. En nuestro
                 aplicativo móvil encontraras información, tutoriales y datos acerca
@@ -39,9 +42,11 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignContent: 'center'
     },
-    logo:{
+    personaje:{
         alignSelf:'center',
-        marginBottom:10
+        marginBottom:10,
+        height: 250,
+        width: 138
     },
     heroImage:{
         alignSelf:'center',

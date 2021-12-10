@@ -18,7 +18,7 @@ export default function HomeMenuScreen({navigation}) {
       :
       <View style={styles.container}>
             <LinkInfo title={'Econocimiento'} nameImage={'Econocimiento'}  route={'Econocimiento'} navigation={navigation} colorText={Colors.BgEconocimiento} />
-            <LinkInfo title={'Bricolage'} nameImage={'Bricolage'}  route={'Bricolage'}  navigation={navigation} colorText={Colors.BgBricolage}/>
+            <LinkInfo title={'Bricolaje'} nameImage={'Bricolage'}  route={'Bricolage'}  navigation={navigation} colorText={Colors.BgBricolage}/>
             <LinkInfo title={'Compostaje'} nameImage={'Compostaje'}  route={'Compostaje'}  navigation={navigation} colorText={Colors.BgCompostaje}/>
             <LinkInfo title={'EcoKids'} nameImage={'EcoKids'} route={'Ecokids'}   navigation={navigation} colorText={Colors.BgEcoKids}/>
             <LinkInfo title={'Centros de acopio'} nameImage={'acopio'} route={'centrosAcopio'}   navigation={navigation} colorText={Colors.BgAcopio}/>
@@ -39,5 +39,7 @@ const styles = StyleSheet.create({
    justifyContent:'space-around'
   }
 })
+
+
 
 
