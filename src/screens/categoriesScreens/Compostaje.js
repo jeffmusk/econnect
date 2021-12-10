@@ -22,8 +22,8 @@ export default function Compostaje() {
 
     return (
         <ScrollView >
-            <View style={styles.container}>
-                <Text style={styles.category}>Compostaje</Text>
+            <View>
+            <Text style={styles.category}>Compostaje</Text>
                 
                 <Text style={styles.title}>¿Qué es compostaje? :</Text>
                 <Image style={styles.imagen} source={require('../../assets/compostaje/compostaje.jpg')}/>
@@ -36,15 +36,7 @@ export default function Compostaje() {
                 <Text style={styles.description}>
                     El compost es un producto organico.Se trata de un abono natural que resulta de la acción de bacterias,hongos y gusanos sobre residuos que produces en tu casa
                 </Text>
-                
-                <View style={styles.video}>
-                    <YoutubePlayer
-                        height={230}
-                        play={playing}
-                        videoId={"vqT-k5Y5qQA"}
-                        onChangeState={onStateChange}
-                    />
-                </View>
+
                 <Text style={styles.title}>
                     ¿Por qué es importante realizar compostaje en nuestro hogar? 
                 </Text>
@@ -68,12 +60,12 @@ export default function Compostaje() {
                 para que la materia orgánica sea
                 descompuesta por diversos
                 microorganismos, pequeños invertebrados y
-                oxidación biológica. En el compostaje no se
+                oxidación biológica. {"\n"}{"\n"}En el compostaje no se
                 requiere apenas luz, la temperatura exterior
                 idónea debe estar entre 15%. y 25*C.
                 </Text>
-                
-                <Text style={styles.title}>Beneficios del compost  :</Text>
+
+                <Text style={styles.title}>Beneficios del compost: </Text>
                 <Image style={styles.imagen} source={require('../../assets/compostaje/beneficios.jpg')}/>
                 <Text style={styles.description}>
                 -Efectos en la estructura del suelo. 
@@ -82,41 +74,7 @@ export default function Compostaje() {
                 {"\n"}{"\n"}
                 -Efectos sobre la salud del suelo.  
                 </Text>
-
-                <Text style={styles.description}>
-                Se trata de un producto natural, sin compuestos químicos y libre de patógenos. En muchos casos actúa como bactericida y fungicida.
-                </Text>
-
-                <Text style={styles.description}>
-                -Efectos sobre los nutrientes de las plantas.  
-                </Text>
-
-                <Text style={styles.description}>
-                Al ser un producto rico en nutrientes y macronutrientes, se convierte en un excelente abono para las plantas. 
-                </Text>
-
-                <Text style={styles.description}>
-                -Beneficios económicos. 
-                </Text>
-
-                <Text style={styles.description}>
-                No es necesario adquirir este producto, ya que se obtiene de un proceso muy sencillo que se puede realizar en el hogar 
-                </Text>
-
-                <Text style={styles.title}>Usos del compos :</Text>
-
-                <Text style={styles.description}>
-                Depende del grado de madurez del compost y del tipo de cultivo para el cual se destina, siendo las épocas óptimas para su aplicación primavera y otoño, épocas en que el suelo está caliente y la adición del compost lo calentará aún más favoreciendo la actividad de los microorganismos y el desarrollo de las raíces de la planta.
-                {"\n"}{"\n"}
-                Diferenciamos dos grados de madurez: 
-                {"\n"}{"\n"}
-                • Compost fresco (2-3 meses compostando): el que ha tenido un período de madurez corto y en el que se aprecia aún material sin descomponer. Se usa principalmente como protección frente ante los cambios de temperatura y de humedad, en especial frente a heladas. Además mejora las características del suelo y evita la aparición de malas hierbas.
-                {"\n"}{"\n"}
-                • Compost maduro (aproximadamente 5-6 meses compostando): aquel que ha tenido un período de madurez largo y no se aprecian materiales sin descomponer (excepto aquellos de muy lenta descomposición, ramas, cáscaras de huevo, etc.). Se diferencia fácilmente por su textura terrosa y su color oscuro. Su uso principalmente es como fertilizante ya que aporta elementos minerales (nitrógeno, fósforo, potasio, etc.), además de favorecer la capacidad de retención de agua.
-                </Text>
-                <Image style={styles.imagen} source={require('../../assets/compostaje/usos.jpg')}/>
-            </View>  
-                
+            </View>
         </ScrollView>
     )
 }
@@ -158,6 +116,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000',
     },
     imagen:{
-        marginTop: 10
+        marginTop: 10,
+        width: '100%'
     }
 })
